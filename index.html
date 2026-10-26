@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14263c">
+  <meta name="description" content="杨启航｜人才发展与组织成长、招聘配置、培训管理及保险行业人力资源实践。">
+  <title>杨启航｜个人主页</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #14263c;
+      --navy-2: #213c59;
+      --teal: #337d78;
+      --gold: #b48b52;
+      --paper: #f6f4ef;
+      --white: #fff;
+      --ink: #1d2b39;
+      --muted: #64717d;
+      --line: #d9dedf;
+      --soft: #e9eeeb;
+      --serif: "Iowan Old Style", "Baskerville", "Songti SC", "Noto Serif SC", serif;
+      --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --page: 1140px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.75 var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #c49b60; outline-offset: 4px; }
+    .container { width: min(var(--page), calc(100% - 64px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 10; background: rgba(246,244,239,.96); border-bottom: 1px solid rgba(20,38,60,.12); backdrop-filter: blur(12px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .wordmark { color: var(--navy); font: 600 17px/1 var(--serif); letter-spacing: .12em; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.5vw, 34px); color: #526170; font-size: 13px; }
+    .nav-links a { padding: 10px 0; transition: color .18s ease; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-action { padding: 9px 14px !important; border: 1px solid #aeb8bd; color: var(--navy); }
+    .hero { position: relative; overflow: hidden; background: var(--navy); color: #f8f6f0; }
+    .hero::after { position: absolute; content: ""; width: 480px; height: 480px; right: max(-120px, calc((100vw - var(--page))/2 - 130px)); top: 40px; border: 1px solid rgba(213,193,158,.2); border-radius: 50%; box-shadow: 0 0 0 48px rgba(255,255,255,.018), 0 0 0 96px rgba(255,255,255,.018); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 264px; align-items: center; gap: clamp(32px, 6vw, 76px); padding-block: clamp(74px, 10vw, 126px) 62px; }
+    .hero-copy { min-width: 0; }
+    .portrait { position: relative; width: min(100%, 250px); aspect-ratio: 4 / 5; justify-self: center; margin: 0; padding: 5px; isolation: isolate; border-radius: 3px; background: rgba(236,241,239,.22); box-shadow: 0 20px 48px rgba(4,14,27,.25); }
+    .portrait::before { position: absolute; z-index: -1; inset: 1px; content: ""; border-radius: 7px; background: url("images/yang-qihang.jpg") center / cover no-repeat; filter: blur(17px); opacity: .62; transform: scale(1.035); }
+    .portrait img { display: block; width: 100%; height: 100%; border-radius: 2px; object-fit: cover; object-position: center; box-shadow: 0 0 0 1px rgba(255,255,255,.38); }
+    .eyebrow { display: flex; align-items: center; gap: 12px; color: #cbb58d; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow::before { width: 28px; height: 1px; content: ""; background: var(--gold); }
+    h1 { max-width: 760px; margin: 25px 0 8px; font: 500 clamp(54px, 9vw, 100px)/1.08 var(--serif); letter-spacing: .055em; }
+    .hero-summary { max-width: 655px; margin: 0; color: #c1ccd1; font-size: 15px; line-height: 1.95; }
+    .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-top: 52px; }
+    .focus-list { display: flex; gap: 10px 24px; flex-wrap: wrap; max-width: 640px; color: #e2e8e5; font-size: 12px; }
+    .focus-list span { display: inline-flex; align-items: center; gap: 9px; }
+    .focus-list span::before { content: ""; width: 5px; height: 5px; background: #c5a46e; border-radius: 50%; }
+    .hero-location { color: #aebdc5; font-size: 12px; letter-spacing: .06em; white-space: nowrap; }
+    .section { padding-block: 86px; border-bottom: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 225px 1fr; gap: 48px; margin-bottom: 44px; }
+    .section-index { color: var(--teal); font-size: 10px; font-weight: 650; letter-spacing: .18em; }
+    h2 { margin: 7px 0 0; color: var(--navy); font: 700 38px/1.25 var(--serif); }
+    .section-intro { max-width: 690px; margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+    .experience-list { margin-left: 273px; border-left: 1px solid #bac6c5; }
+    .experience { position: relative; padding: 0 0 40px 32px; break-inside: avoid; }
+    .experience:last-child { padding-bottom: 0; }
+    .experience::before { position: absolute; top: 9px; left: -5px; width: 9px; height: 9px; content: ""; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 5px var(--paper); }
+    .experience-head { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; }
+    .company { margin: 0; color: var(--navy); font-size: 17px; font-weight: 650; line-height: 1.55; }
+    .period { color: var(--teal); font-size: 11px; font-weight: 650; letter-spacing: .035em; white-space: nowrap; }
+    .role { margin: 3px 0 13px; color: #65727c; font-size: 12px; }
+    .experience ul { margin: 0; padding-left: 18px; color: #465561; font-size: 13px; }
+    .experience li { padding: 2px 0 3px 2px; }
+    .experience li::marker { color: var(--gold); }
+    .education-grid, .skills-grid, .outcomes-grid { margin-left: 273px; }
+    .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .education { padding: 24px 25px 22px; border-top: 2px solid var(--navy); background: var(--white); break-inside: avoid; }
+    .education .period { display: block; margin-bottom: 10px; }
+    .education h3 { margin: 0; color: var(--navy); font: 600 18px/1.5 var(--sans); }
+    .education p { margin: 3px 0 0; color: #596873; font-size: 12px; }
+    .education .detail { margin-top: 12px; padding-top: 10px; border-top: 1px solid #e5e8e6; color: #737e84; font-size: 11px; line-height: 1.8; }
+    .outcomes-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 30px; border-top: 1px solid var(--line); }
+    .outcome { display: grid; grid-template-columns: 94px 1fr; gap: 16px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+    .outcome-value { color: var(--teal); font: 500 28px/1.2 var(--serif); white-space: nowrap; }
+    .outcome h3 { margin: 0; color: var(--navy); font-size: 13px; font-weight: 650; }
+    .outcome p { margin: 4px 0 0; color: #78838a; font-size: 10px; line-height: 1.7; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 34px; }
+    .skill { padding: 17px 0 18px; border-top: 1px solid var(--line); break-inside: avoid; }
+    .skill h3 { margin: 0 0 5px; color: var(--navy); font-size: 14px; font-weight: 650; }
+    .skill p { margin: 0; color: #697781; font-size: 12px; line-height: 1.85; }
+    .contact { background: #e9eeeb; }
+    .contact-grid { display: grid; grid-template-columns: 225px 1fr; gap: 48px; align-items: start; }
+    .contact h2 { margin-top: 8px; }
+    .contact-copy { color: #5e6c75; font-size: 13px; }
+    .contact-details { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .contact-item { min-width: 205px; padding: 12px 15px; border: 1px solid #c8d2d0; background: rgba(255,255,255,.5); }
+    .contact-item small { display: block; color: #788681; font-size: 9px; font-weight: 650; letter-spacing: .15em; }
+    .contact-item a, .contact-item span { display: block; margin-top: 3px; color: var(--navy); font-size: 13px; overflow-wrap: anywhere; }
+    .contact-item a:hover { color: var(--teal); }
+    .site-footer { padding-block: 21px; color: #78838a; font-size: 10px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; }
+    .print-action { border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+    .print-action:hover { color: var(--teal); }
+    @media (max-width: 800px) {
+      .container { width: min(100% - 40px, 640px); }
+      .nav { min-height: 66px; gap: 18px; }
+      .nav-links { gap: 16px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; font-size: 11px; }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-action { display: none; }
+      .hero-inner { padding-block: 74px 44px; }
+      .hero-inner { grid-template-columns: minmax(0,1fr) 190px; gap: 28px; }
+      .portrait { max-width: 190px; justify-self: end; }
+      .hero::after { width: 300px; height: 300px; right: -170px; top: 75px; }
+      .hero-bottom { align-items: flex-start; flex-direction: column; gap: 17px; margin-top: 34px; }
+      .section { padding-block: 62px; }
+      .section-heading { grid-template-columns: 1fr; gap: 10px; margin-bottom: 31px; }
+      h2 { font-size: 33px; }
+      .experience-list, .education-grid, .skills-grid, .outcomes-grid { margin-left: 0; }
+      .experience { padding-left: 23px; }
+      .experience-head { grid-template-columns: 1fr; gap: 1px; }
+      .period { order: -1; }
+      .education-grid { grid-template-columns: 1fr; }
+      .outcomes-grid { gap: 0 18px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 10px; }
+      .contact-details { display: grid; grid-template-columns: 1fr; }
+      .contact-item { min-width: 0; }
+    }
+    @media (max-width: 440px) {
+      .container { width: calc(100% - 32px); }
+      .wordmark { font-size: 14px; }
+      .nav-links { gap: 13px; }
+      .hero-inner { padding-top: 62px; }
+      .hero-inner { grid-template-columns: minmax(0,1fr) 112px; gap: 14px; }
+      .portrait { max-width: 112px; }
+      h1 { font-size: 55px; }
+      .focus-list { gap: 8px 15px; font-size: 11px; }
+      .outcomes-grid, .skills-grid { grid-template-columns: 1fr; }
+      .outcome { grid-template-columns: 83px 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @page { size: A4; margin: 15mm 16mm 16mm; }
+    @media print {
+      :root { --paper: #fff; --white: #fff; --ink: #172638; }
+      html, body { background: #fff !important; color: #172638; font-size: 10pt; line-height: 1.5; }
+      .site-header, .print-action { display: none !important; }
+      .container { width: 100%; max-width: none; }
+      .hero { background: #fff !important; color: #172638; border-bottom: 2px solid #203750; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .hero::after { display: none; }
+      .hero-inner { display: grid; grid-template-columns: 1fr 34mm; gap: 8mm; padding: 0 0 10mm; }
+      .portrait { width: 34mm; padding: 0; border-radius: 2px; box-shadow: none; }
+      .portrait::before { display: none; }
+      .eyebrow, .hero-summary, .hero-location, .focus-list { color: #354b5e; }
+      h1 { margin: 5mm 0 0; font-size: 40pt; color: #14263c; }
+      .hero-bottom { margin-top: 5mm; }
+      .section { padding-block: 9mm; break-inside: auto; }
+      .section-heading { grid-template-columns: 42mm 1fr; gap: 8mm; margin-bottom: 5mm; }
+      h2 { font-size: 22pt; }
+      .section-intro { font-size: 9pt; }
+      .experience-list, .education-grid, .skills-grid, .outcomes-grid { margin-left: 50mm; }
+      .experience { padding: 0 0 6mm 6mm; }
+      .experience-head { grid-template-columns: 1fr auto; }
+      .experience { break-inside: avoid; }
+      .experience ul, .skill p { font-size: 8.5pt; }
+      .education-grid { gap: 4mm; }
+      .education { padding: 4mm; background: #fff; border: 1px solid #d7dddf; border-top: 2px solid #14263c; }
+      .outcomes-grid { gap: 0 5mm; }
+      .outcome { grid-template-columns: 22mm 1fr; padding: 3mm 0; }
+      .outcome-value { font-size: 19pt; }
+      .contact { background: #fff; border-top: 1px solid #aab5bb; }
+      .contact-grid { grid-template-columns: 42mm 1fr; gap: 8mm; }
+      .contact-details { gap: 3mm; }
+      .contact-item { min-width: 0; padding: 3mm; background: #fff; }
+      .site-footer { display: none; }
+      a { text-decoration: none; }
+      .experience, .education, .skill, .outcome { break-inside: avoid; }
+      * { box-shadow: none !important; text-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="wordmark" href="#top">YANG QIHANG</a>
+      <div class="nav-links">
+        <a href="#experience">工作经历</a><a href="#outcomes">工作成果</a><a href="#education">教育背景</a><a href="#capabilities">专业能力</a><a href="#contact">联系方式</a>
+        <button class="nav-action print-action" type="button" onclick="window.print()">打印 / 保存 PDF</button>
+      </div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="name">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">PEOPLE &amp; ORGANIZATION DEVELOPMENT</div>
+          <h1 id="name">杨启航</h1>
+          <p class="hero-summary">深耕保险行业人力资源实践，具备人才发展、招聘配置与培训管理经验。从人才梯队和培养机制建设，到招聘与培训项目落地，关注人才机制如何支持组织成长。</p>
+          <div class="hero-bottom">
+            <div class="focus-list"><span>人才发展与组织成长</span><span>招聘配置与人才甄选</span><span>培训管理与人才培养</span></div>
+            <div class="hero-location">现居 · 深圳</div>
+          </div>
+        </div>
+        <figure class="portrait"><img src="images/yang-qihang.jpg" alt="杨启航职业照" width="1000" height="1000" fetchpriority="high"></figure>
+      </div>
+    </section>
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-index">01 / EXPERIENCE</div><h2>工作经历</h2></div><p class="section-intro">完整展示保险行业多段HR与财务相关实战履历，从管培生成长到总公司人才发展培训管理岗</p></div>
+        <div class="experience-list">
+          <article class="experience"><div class="experience-head"><h3 class="company">大家财产保险有限责任公司总公司</h3><time class="period">2026.02 — 至今</time></div><p class="role">党委组织部 / 人力资源部 · 人才发展 / 培训管理岗</p><ul><li><strong>人才发展：</strong>统筹构建核心人才梯队建设体系，建立关键岗位后备人才池与核心人才地图，配套制定个人发展计划（IDP）并跟踪落地；推动跨部门、跨层级轮岗交流与挂职锻炼机制常态化运行，加速复合型管理人才与专业人才培养，夯实公司干部梯队厚度。</li><li><strong>培训管理：</strong>负责培训体系制度的新增、修订与落地；编制年度培训预算并监控执行，规范各部门、各分公司培训费用审核流程；牵头制定公司年度培训规划，搭建重点项目矩阵与实施路径。</li></ul></article>
+          <article class="experience"><div class="experience-head"><h3 class="company">中国人寿财产保险股份有限公司深圳市分公司</h3><time class="period">2022.07 — 2026.02</time></div><p class="role">人力资源部 / 教育培训部 · 招聘 / 培训岗</p><ul><li><strong>招聘配置：</strong>负责分公司本部多个核心部门招聘，年均成功招聘岗位50+，覆盖职能类、技术类、管培生等，岗位层级从主办至高管级；推行并优化结构化面试流程，将平均招聘周期缩短约15%。</li><li><strong>教育培训：</strong>负责分公司各层级员工培训组织和落地，主导新员工、中层领导干部、销售精英、管培生等企业内训项目，覆盖员工超1200人次，整体满意度达95%。</li></ul></article>
+          <article class="experience"><div class="experience-head"><h3 class="company">中国人寿财产保险股份有限公司深圳市分公司</h3><time class="period">2020.07 — 2022.06</time></div><p class="role">国际业务部 · 综合岗</p><ul><li><strong>招聘配置：</strong>负责部门岗位招聘，成功引入外资经纪业务团队2个，补充业务拓展、渠道维护、内勤等关键岗位10余人，支撑业务规模扩张。</li><li><strong>绩效管理：</strong>优化绩效管理流程，更新激励机制方案，推动部门目标完成率提升20%。</li><li><strong>团队文化建设：</strong>策划组织团建文化活动，营造积极协作的团队氛围，强化团队凝聚力。</li></ul></article>
+          <article class="experience"><div class="experience-head"><h3 class="company">中国人寿财产保险股份有限公司深圳市分公司</h3><time class="period">2019.06 — 2020.06</time></div><p class="role">财务会计部 · 管培生</p><ul><li><strong>费用管理：</strong>负责费用报销审核、预算监控、工资审核入账及对外统计报表报送，熟练使用财务与预算系统，具备较强数字敏感度与逻辑能力。</li><li>获国寿财险深圳分公司2020年度优秀管培生。</li></ul></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="outcomes">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-index">02 / SELECTED RESULTS</div><h2>工作成果</h2></div><p class="section-intro">用可量化数据直观呈现招聘、培训、绩效等项目带来的业务改善成效</p></div>
+        <div class="outcomes-grid">
+          <article class="outcome"><b class="outcome-value">约 15%</b><div><h3>平均招聘周期缩短</h3><p>结构化面试流程优化 · 中国人寿财险深圳分公司招聘 / 培训岗（2022.07—2026.02）</p></div></article>
+          <article class="outcome"><b class="outcome-value">20%</b><div><h3>部门目标完成率提升</h3><p>绩效管理流程与激励机制优化 · 中国人寿财险深圳分公司国际业务部综合岗（2020.07—2022.06）</p></div></article>
+          <article class="outcome"><b class="outcome-value">2 个</b><div><h3>引入外资经纪业务团队</h3><p>并补充业务拓展、渠道维护、内勤等关键岗位10余人 · 国际业务部综合岗（2020.07—2022.06）</p></div></article>
+          <article class="outcome"><b class="outcome-value">50+</b><div><h3>年均成功招聘岗位</h3><p>覆盖职能、技术、管培生等类型及主办至高管级 · 人力资源部 / 教育培训部招聘岗（2022.07—2026.02）</p></div></article>
+          <article class="outcome"><b class="outcome-value">1,200+</b><div><h3>培训覆盖员工人次</h3><p>新员工、中层干部、销售精英与管培生培训 · 教育培训部（2022.07—2026.02）</p></div></article>
+          <article class="outcome"><b class="outcome-value">95%</b><div><h3>培训整体满意度</h3><p>对应分公司员工培训项目 · 教育培训部（2022.07—2026.02）</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-index">03 / EDUCATION</div><h2>教育背景</h2></div><p class="section-intro">会计学本科，拥有海外交换经历，在校期间曾获奖学金与荣誉称号</p></div>
+        <div class="education-grid">
+          <article class="education"><time class="period">2015.09 — 2019.06</time><h3>深圳大学</h3><p>会计学专业 · 本科</p><p class="detail">核心课程：初 / 中 / 高级财务会计、成本会计学、税法、概率论与统计学等。<br>校级文体奖学金；2015年度“优秀共青团员”称号。</p></article>
+          <article class="education"><time class="period">2017.09 — 2018.01</time><h3>韩国崇实大学</h3><p>交换学习</p><p class="detail">课程：Financial Management、Financial Accounting、中级韩国语。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-index">04 / CAPABILITIES</div><h2>专业能力</h2></div><p class="section-intro">覆盖人力资源、数据分析、外语水平和AI工具，综合能力全面</p></div>
+        <div class="skills-grid">
+          <article class="skill"><h3>人才与组织发展</h3><p>核心人才梯队建设、关键岗位后备人才池、核心人才地图、个人发展计划（IDP）、轮岗交流与挂职锻炼机制。</p></article>
+          <article class="skill"><h3>招聘与人才配置</h3><p>核心岗位招聘、结构化面试流程、人才甄选；覆盖职能类、技术类、管培生及不同岗位层级。</p></article>
+          <article class="skill"><h3>培训规划与项目管理</h3><p>培训制度建设、年度培训规划、重点项目矩阵、培训项目组织落地与费用预算管理。</p></article>
+          <article class="skill"><h3>数据分析与办公能力</h3><p>熟练使用办公软件，精通 Excel 函数与数据分析；熟悉财务与预算系统。</p></article>
+          <article class="skill"><h3>专业资质、语言与写作</h3><p>中级经济师、初级会计职称；英语 CET-6（590分）、韩语 TOPIK 中级；公文写作与项目方案撰写。</p></article>
+          <article class="skill"><h3>AI Agent智能工具应用</h3><p>利用智能代理工具自动化处理信息检索、内容撰写、材料汇总等工作，赋能业务项目高效推进。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div><div class="section-index">05 / CONTACT</div><h2>联系方式</h2></div>
+        <div class="contact-copy">欢迎就人才发展、组织建设、招聘配置与培训管理相关机会联系。<div class="contact-details">
+          <div class="contact-item"><small>EMAIL</small><a href="mailto:1076755002@qq.com">1076755002@qq.com</a></div>
+          <div class="contact-item"><small>PHONE</small><a href="tel:+8613798262783">137 9826 2783</a></div>
+          <div class="contact-item"><small>LOCATION</small><span>深圳</span></div>
+        </div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year"></span> 杨启航</span><button class="print-action" type="button" onclick="window.print()">打印 / 保存 PDF</button></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
